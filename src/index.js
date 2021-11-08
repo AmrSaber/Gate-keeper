@@ -5,7 +5,7 @@ import 'express-async-errors';
 import helmet from 'helmet';
 import httpStatus from 'http-status';
 import config from './common/config.js';
-import { errorHandler } from './common/error-handler.js';
+import { errorHandler } from './common/middlewares/error-handler.js';
 import { router } from './router.js';
 
 const app = express();

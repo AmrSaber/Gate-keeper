@@ -1,5 +1,5 @@
 import httpStatus from 'http-status';
-import { BaseError } from './errors/base-error.js';
+import { BaseError } from '../errors/base-error.js';
 
 // eslint-disable-next-line no-unused-vars
 export const errorHandler = (error, req, res, next) => {

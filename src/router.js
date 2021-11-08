@@ -5,10 +5,11 @@ import { assertString } from './common/helpers.js';
 import { getRedisInstance } from './common/redis.js';
 import { Forbidden } from './common/errors/forbidden.js';
 import { NotFound } from './common/errors/not-found.js';
+import { adminAuth } from './common/middlewares/admin-auth.js';
 
 export const router = new Router();
 
-router.put('/keys', async (req, res) => {
+router.put('/keys', adminAuth, async (req, res) => {
   const { key, password, url } = req.body;
   assertString({ key });
   assertString({ password });
@@ -20,7 +21,7 @@ router.put('/keys', async (req, res) => {
   res.status(httpStatus.OK).end();
 });
 
-router.delete('/keys/:key', async (req, res) => {
+router.delete('/keys/:key', adminAuth, async (req, res) => {
   const { key } = req.params;
   assertString({ key });
 
