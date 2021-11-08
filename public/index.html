@@ -8,8 +8,14 @@
 
 <body>
   <form>
-    <div style="width: 30%; margin: 80px auto; display: flex; flex-direction: column;">
-      <div style="display: flex; flex-direction: row;">
+    <div id="container" style="width: 30%; margin: 80px auto; display: none; flex-direction: column;">
+
+      <div id="key-text-div" style="display: none; flex-direction: row;">
+        <span style="width: 25%;">Key</span>
+        <span id="key-text" style="width: 75%; text-align: center;"></span>
+      </div>
+
+      <div id="key-input-div" style="display: flex; flex-direction: row;">
         <label for="key" style="width: 25%;">Key</label>
         <input id="key" type="text" style="width: 75%;" />
       </div>
