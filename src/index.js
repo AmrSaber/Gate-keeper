@@ -14,7 +14,7 @@ app.use(cors());
 app.use(helmet());
 app.use(bodyParser.json());
 
-app.use('/api', router)
+app.use('/api', router);
 
 app.use(express.static('public'));
 
@@ -24,7 +24,10 @@ app.use('*', (req, res) => {
 
 app.use(errorHandler);
 
-app.listen(config.PORT, (err) => {
-  if (err != null) console.error(err);
-  else console.log(`Listening on port ${config.PORT}`);
+app.listen(config.PORT, err => {
+  if (err != null) {
+    console.error(err); // eslint-disable-line no-console
+  } else {
+    console.log(`Listening on port ${config.PORT}`); // eslint-disable-line no-console
+  }
 });

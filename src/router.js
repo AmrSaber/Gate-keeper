@@ -41,7 +41,7 @@ router.get('/keys/:key', async (req, res) => {
   const [keyPassword, url] = await redis.mget(`${key}:password`, `${key}:url`);
 
   if (keyPassword == null || url == null) throw new NotFound('Key not found');
-  if (password != keyPassword) throw new Forbidden();
-  
+  if (password !== keyPassword) throw new Forbidden();
+
   res.status(httpStatus.OK).json({ url });
 });

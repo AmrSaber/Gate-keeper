@@ -15,7 +15,7 @@ const queryKey = urlParams.get('key');
 
 // Get key & password and handle the submit key click
 {
-  document.getElementById('submit').onclick = (e) => {
+  document.getElementById('submit').onclick = e => {
     e.preventDefault();
 
     const key = queryKey || document.getElementById('key').value;
@@ -23,18 +23,19 @@ const queryKey = urlParams.get('key');
 
     fetch(`api/keys/${key}`, { headers: { 'X-PASSWORD': password } })
       .then(response => {
-        const status = response.status;
+        const { status } = response;
         response.json().then(body => {
           if (status !== 200) {
-            alert(`${status} - ${body.message}`)
+            alert(`${status} - ${body.message}`); // eslint-disable-line no-alert
           } else {
             // Redirect to URL
             window.location.replace(body.url);
           }
-        })
-      }).catch(err => {
-        console.error(err);
-        alert(err.message);
+        });
+      })
+      .catch(err => {
+        console.error(err); // eslint-disable-line no-console
+        alert(err.message); // eslint-disable-line no-alert
       });
   };
 }

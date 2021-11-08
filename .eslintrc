@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "airbnb-base",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2017
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "rules": {
+    // closed from airbnb
+    "func-names": "off",
+    "no-underscore-dangle": "off",
+    "import/prefer-default-export": "off",
+    "no-plusplus": "off",
+    "no-lone-blocks": "off",
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "ignorePackages": true
+      }
+    ]
+  }
+}
