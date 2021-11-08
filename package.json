@@ -1,0 +1,27 @@
+{
+  "name": "gate-keeper",
+  "version": "0.0.1",
+  "description": "Auth and redirect",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "auth",
+    "redirect"
+  ],
+  "author": "Amr Saber",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "helmet": "^4.6.0",
+    "http-status": "^1.5.0",
+    "ioredis": "^4.28.0",
+    "lodash": "^4.17.21"
+  }
+}
