@@ -1,3 +1,4 @@
+import bcrypt from 'bcrypt';
 import { Router } from 'express';
 import 'express-async-errors';
 import httpStatus from 'http-status';
@@ -16,7 +17,7 @@ router.put('/keys', adminAuth, async (req, res) => {
   assertString({ url });
 
   const redis = getRedisInstance();
-  await redis.mset(`${key}:password`, password, `${key}:url`, url);
+  await redis.mset(`${key}:password`, bcrypt.hashSync(password, 8), `${key}:url`, url);
 
   res.status(httpStatus.OK).end();
 });
@@ -42,7 +43,7 @@ router.get('/keys/:key', async (req, res) => {
   const [keyPassword, url] = await redis.mget(`${key}:password`, `${key}:url`);
 
   if (keyPassword == null || url == null) throw new NotFound('Key not found');
-  if (password !== keyPassword) throw new Forbidden();
+  if (!bcrypt.compareSync(keyPassword, password)) throw new Forbidden();
 
   res.status(httpStatus.OK).json({ url });
 });
