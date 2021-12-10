@@ -31,13 +31,13 @@ const queryKey = urlParams.get('key');
             // Redirect to URL
             window.location.replace(body.url);
           }
-
-          document.getElementById('key').focus();
         });
       })
       .catch(err => {
         console.error(err); // eslint-disable-line no-console
         alert(err.message); // eslint-disable-line no-alert
       });
+
+    document.getElementById('password').focus();
   };
 }
