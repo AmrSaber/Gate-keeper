@@ -5,12 +5,12 @@ const queryKey = urlParams.get('key');
 {
   document.getElementById('key-text').innerHTML = queryKey;
 
-  if (queryKey != null) {
-    document.getElementById('key-input-div').style.display = 'none';
-    document.getElementById('key-text-div').style.display = 'flex';
+  if (queryKey == null) {
+    document.getElementById('key-text').style.display = 'none';
+    document.getElementById('key').style.display = 'inline';
   }
 
-  document.getElementById('container').style.display = 'flex';
+  document.querySelector('form').style.display = 'grid';
 }
 
 // Get key & password and handle the submit key click
@@ -31,6 +31,8 @@ const queryKey = urlParams.get('key');
             // Redirect to URL
             window.location.replace(body.url);
           }
+
+          document.getElementById('key').focus();
         });
       })
       .catch(err => {

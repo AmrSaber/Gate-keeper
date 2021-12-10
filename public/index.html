@@ -1,35 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gate keeper</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Gate keeper</title>
-</head>
+  <body>
+    <form>
+      <label for="key">Key</label>
+      <span id="key-text"></span>
+      <input id="key" type="text" />
 
-<body>
-  <form>
-    <div id="container" style="width: 30%; margin: 80px auto; display: none; flex-direction: column;">
+      <label for="password">Password</label>
+      <input id="password" type="password" />
 
-      <div id="key-text-div" style="display: none; flex-direction: row;">
-        <span style="width: 25%;">Key</span>
-        <span id="key-text" style="width: 75%; text-align: center;"></span>
-      </div>
+      <button id="submit" type="submit">Go</button>
+    </form>
 
-      <div id="key-input-div" style="display: flex; flex-direction: row;">
-        <label for="key" style="width: 25%;">Key</label>
-        <input id="key" type="text" style="width: 75%;" />
-      </div>
-
-      <div style="display: flex; flex-direction: row; margin-top: 12px;">
-        <label for="password" style="width: 25%;">password</label>
-        <input id="password" type="password" style="width: 75%;" />
-      </div>
-
-      <button id="submit" type="submit" style="width: 50%; margin: 20px auto;">Go</button>
-  </form>
-  </div>
-
-  <script src="./script.js"></script>
-</body>
-
+    <script src="./script.js"></script>
+  </body>
 </html>
