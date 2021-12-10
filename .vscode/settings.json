@@ -4,10 +4,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "cSpell.words": [
-    "mget",
-    "middlewares",
-    "mset",
-    "plusplus"
-  ]
+  "cSpell.words": ["mget", "middlewares", "mset", "plusplus"],
+  "liveServer.settings.port": 5501
 }
