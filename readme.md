@@ -1,5 +1,7 @@
 # Gate Keeper
 
+> This project is archived in favor of the more mature [redirector](https://github.com/AmrSaber/redirector), they both provide the same functionality; and redirector is a lot more mature and has a lot more features.
+
 Simple authenticate and redirect service, that shows a form asking you for a password, if the password is correct it redirects you to a pre-specified URL.
 
 This projects depends on Redis database (maybe add support for more data stores later), and it offers 3 endpoints and 1 static HTML page. The whole idea is to serve the static page for a user so they enter their key (to differentiate different URLs) and related password, then get redirected to the desired page. 2 of the endpoints are to be used by the admins (PUT and DELETE requests), and the third one is used by the HTML page (GET request).
